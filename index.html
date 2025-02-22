@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StarPet</title>
+  <style>
+    /* Основные стили */
+    body {
+      background: linear-gradient(45deg, #FF9AA2, #A2E1F5);
+      font-family: 'Nunito', sans-serif;
+      color: white;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      animation: gradient 10s ease infinite;
+      transform: scale(2.5); /* Увеличение в 2.5 раза */
+      transform-origin: top left; /* Точка трансформации в верхнем левом углу */
+      width: 40%; /* Уменьшаем ширину, чтобы вместить увеличенный интерфейс */
+      height: 40%; /* Уменьшаем высоту, чтобы вместить увеличенный интерфейс */
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Top Bar */
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      box-sizing: border-box; /* Учитываем padding в ширине */
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+    }
+
+    .profile img {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    /* Виджеты */
+    .widgets {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding: 10px;
+      margin-top: 60px; /* Отступ для Top Bar */
+      box-sizing: border-box; /* Учитываем padding в ширине */
+    }
+
+    .exchange-widget {
+      width: 70%;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      padding: 10px;
+      box-sizing: border-box; /* Учитываем padding в ширине */
+    }
+
+    .rewards-widget {
+      width: 25%;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      padding: 10px;
+      text-align: center;
+      box-sizing: border-box; /* Учитываем padding в ширине */
+    }
+
+    /* Питомец */
+    .pet {
+      width: 150px;
+      height: 150px;
+      background: rgba(255, 255, 255, 0.3);
+      border-radius: 20px;
+      margin-top: 20px;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-20px); }
+    }
+
+    /* Bottom Bar */
+    .bottom-bar {
+      display: flex;
+      justify-content: space-around;
+      width: 100%;
+      padding: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      box-sizing: border-box; /* Учитываем padding в ширине */
+    }
+
+    .button {
+      background: rgba(255, 255, 255, 0.3);
+      border: none;
+      border-radius: 20px;
+      padding: 10px 20px;
+      color: white;
+      font-size: 16px;
+      transition: transform 0.2s;
+    }
+
+    .button:hover {
+      transform: scale(1.1);
+    }
+
+    /* Контейнер для основного контента */
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      padding-bottom: 80px; /* Отступ для Bottom Bar */
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="profile">
+      <img src="profile.png" alt="Profile">
+      <div>🌟 2,500</div>
+    </div>
+    <div>⚙️</div>
+  </div>
+
+  <!-- Основной контент -->
+  <div class="content">
+    <!-- Виджеты -->
+    <div class="widgets">
+      <div class="exchange-widget">Обмен: 1 монета = 10 очков</div>
+      <div class="rewards-widget">🎁</div>
+    </div>
+
+    <!-- Питомец -->
+    <div class="pet"></div>
+  </div>
+
+  <!-- Bottom Bar -->
+  <div class="bottom-bar">
+    <button class="button">🏠</button>
+    <button class="button">📜</button>
+    <button class="button">🏆</button>
+    <button class="button">👫</button>
+  </div>
+</body>
+</html>
