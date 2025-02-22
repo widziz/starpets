@@ -2,8 +2,8 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- Запрет масштабирования и изменения размера -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>StarPet</title>
   <style>
     /* Основные стили */
@@ -32,7 +32,7 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
-      padding: 10px;
+      padding: 15px; /* Увеличенный padding */
       background: rgba(255, 255, 255, 0.2);
       position: fixed;
       top: 0;
@@ -48,10 +48,10 @@
     }
 
     .profile img {
-      width: 30px;
-      height: 30px;
+      width: 40px; /* Увеличенный размер */
+      height: 40px; /* Увеличенный размер */
       border-radius: 50%;
-      margin-right: 10px;
+      margin-right: 15px; /* Увеличенный отступ */
     }
 
     /* Виджеты */
@@ -59,35 +59,37 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
-      padding: 10px;
-      margin-top: 60px; /* Отступ для Top Bar */
+      padding: 15px; /* Увеличенный padding */
+      margin-top: 80px; /* Увеличенный отступ для Top Bar */
       box-sizing: border-box; /* Учитываем padding в ширине */
     }
 
     .exchange-widget {
       width: 70%;
       background: rgba(255, 255, 255, 0.3);
-      border-radius: 20px;
-      padding: 10px;
+      border-radius: 25px; /* Увеличенный радиус */
+      padding: 15px; /* Увеличенный padding */
       box-sizing: border-box; /* Учитываем padding в ширине */
+      font-size: 18px; /* Увеличенный размер текста */
     }
 
     .rewards-widget {
       width: 25%;
       background: rgba(255, 255, 255, 0.3);
-      border-radius: 20px;
-      padding: 10px;
+      border-radius: 25px; /* Увеличенный радиус */
+      padding: 15px; /* Увеличенный padding */
       text-align: center;
       box-sizing: border-box; /* Учитываем padding в ширине */
+      font-size: 18px; /* Увеличенный размер текста */
     }
 
     /* Питомец */
     .pet {
-      width: 150px;
-      height: 150px;
+      width: 180px; /* Увеличенный размер */
+      height: 180px; /* Увеличенный размер */
       background: rgba(255, 255, 255, 0.3);
-      border-radius: 20px;
-      margin-top: 20px;
+      border-radius: 25px; /* Увеличенный радиус */
+      margin-top: 30px; /* Увеличенный отступ */
       animation: float 3s ease-in-out infinite;
     }
 
@@ -101,7 +103,7 @@
       display: flex;
       justify-content: space-around;
       width: 100%;
-      padding: 10px;
+      padding: 15px; /* Увеличенный padding */
       background: rgba(255, 255, 255, 0.2);
       position: fixed;
       bottom: 0;
@@ -114,10 +116,10 @@
     .button {
       background: rgba(255, 255, 255, 0.3);
       border: none;
-      border-radius: 20px;
-      padding: 10px 20px;
+      border-radius: 25px; /* Увеличенный радиус */
+      padding: 15px 30px; /* Увеличенный padding */
       color: white;
-      font-size: 16px;
+      font-size: 18px; /* Увеличенный размер текста */
       transition: transform 0.2s;
     }
 
@@ -131,9 +133,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
+      justify-content: flex-start; /* Виджеты вверху */
       width: 100%;
-      padding-bottom: 80px; /* Отступ для Bottom Bar */
+      padding-bottom: 100px; /* Увеличенный отступ для Bottom Bar */
     }
   </style>
 </head>
