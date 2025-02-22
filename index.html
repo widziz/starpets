@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <!-- Запрет масштабирования и изменения размера -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- Подключение Telegram Web App -->
+  <script src="https://telegram.org/js/telegram-web-app.js?56"></script>
   <title>StarPet</title>
   <style>
     /* Основные стили */
     body {
-      background: linear-gradient(45deg, #FF9AA2, #A2E1F5);
+      background: var(--tg-theme-bg-color, linear-gradient(45deg, #FF9AA2, #A2E1F5)); /* Используем цвет фона из Telegram */
       font-family: 'Nunito', sans-serif;
-      color: white;
+      color: var(--tg-theme-text-color, white); /* Используем цвет текста из Telegram */
       margin: 0;
       padding: 0;
       height: 100vh;
@@ -33,7 +35,7 @@
       justify-content: space-between;
       width: 100%;
       padding: 15px;
-      background: rgba(255, 255, 255, 0.2);
+      background: var(--tg-theme-secondary-bg-color, rgba(255, 255, 255, 0.2)); /* Используем вторичный цвет фона из Telegram */
       position: fixed;
       top: 0;
       left: 0;
@@ -66,7 +68,7 @@
 
     .exchange-widget {
       width: 70%;
-      background: rgba(255, 255, 255, 0.3);
+      background: var(--tg-theme-secondary-bg-color, rgba(255, 255, 255, 0.3));
       border-radius: 25px;
       padding: 15px;
       box-sizing: border-box;
@@ -75,7 +77,7 @@
 
     .rewards-widget {
       width: 25%;
-      background: rgba(255, 255, 255, 0.3);
+      background: var(--tg-theme-secondary-bg-color, rgba(255, 255, 255, 0.3));
       border-radius: 25px;
       padding: 15px;
       text-align: center;
@@ -87,7 +89,7 @@
     .pet {
       width: 180px;
       height: 180px;
-      background: rgba(255, 255, 255, 0.3);
+      background: var(--tg-theme-secondary-bg-color, rgba(255, 255, 255, 0.3));
       border-radius: 25px;
       margin-top: 30px;
       animation: float 3s ease-in-out infinite;
@@ -104,7 +106,7 @@
       justify-content: space-around;
       width: 100%;
       padding: 15px;
-      background: rgba(255, 255, 255, 0.2);
+      background: var(--tg-theme-secondary-bg-color, rgba(255, 255, 255, 0.2));
       position: fixed;
       bottom: 0;
       left: 0;
@@ -114,20 +116,47 @@
     }
 
     .button {
-      background: none;
+      background: url('assets/buttonbg.png') no-repeat center center;
+      background-size: cover;
       border: none;
       padding: 0;
       cursor: pointer;
-      transition: transform 0.2s;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.1s ease;
     }
 
     .button img {
-      width: 40px; /* Размер иконок */
+      width: 40px;
       height: 40px;
+      transition: transform 0.1s ease;
     }
 
+    /* Увеличиваем иконку "домика" */
+    .button.menu img {
+      width: 50px;
+      height: 50px;
+    }
+
+    /* Анимация при наведении */
     .button:hover {
       transform: scale(1.1);
+    }
+
+    .button:hover img {
+      transform: scale(1.1);
+    }
+
+    /* Анимация при нажатии */
+    .button:active {
+      transform: scale(1);
+    }
+
+    .button:active img {
+      transform: scale(1);
     }
 
     /* Контейнер для основного контента */
@@ -166,10 +195,30 @@
 
   <!-- Bottom Bar -->
   <div class="bottom-bar">
-    <button class="button"><img src="assets/menu.png" alt="Menu"></button>
+    <button class="button menu"><img src="assets/menu.png" alt="Menu"></button>
     <button class="button"><img src="assets/missions.png" alt="Missions"></button>
     <button class="button"><img src="assets/top.png" alt="Top"></button>
     <button class="button"><img src="assets/friends.png" alt="Friends"></button>
   </div>
+
+  <script>
+    // Инициализация Telegram Web App
+    Telegram.WebApp.ready();
+
+    // Используем параметры темы Telegram
+    const themeParams = Telegram.WebApp.themeParams;
+    document.body.style.backgroundColor = themeParams.bg_color || '#FF9AA2';
+    document.body.style.color = themeParams.text_color || 'white';
+
+    // Логируем параметры для отладки
+    console.log('Theme Params:', themeParams);
+    console.log('Viewport Height:', Telegram.WebApp.viewportHeight);
+    console.log('Viewport Stable Height:', Telegram.WebApp.viewportStableHeight);
+
+    // Обработчик изменения высоты видимой области
+    Telegram.WebApp.onEvent('viewportChanged', (event) => {
+      console.log('Viewport Changed:', event);
+    });
+  </script>
 </body>
 </html>
