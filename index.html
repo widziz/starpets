@@ -32,14 +32,14 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
-      padding: 15px; /* Увеличенный padding */
+      padding: 15px;
       background: rgba(255, 255, 255, 0.2);
       position: fixed;
       top: 0;
       left: 0;
       right: 0;
       z-index: 1000;
-      box-sizing: border-box; /* Учитываем padding в ширине */
+      box-sizing: border-box;
     }
 
     .profile {
@@ -48,10 +48,10 @@
     }
 
     .profile img {
-      width: 40px; /* Увеличенный размер */
-      height: 40px; /* Увеличенный размер */
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
-      margin-right: 15px; /* Увеличенный отступ */
+      margin-right: 15px;
     }
 
     /* Виджеты */
@@ -59,37 +59,37 @@
       display: flex;
       justify-content: space-between;
       width: 100%;
-      padding: 15px; /* Увеличенный padding */
-      margin-top: 80px; /* Увеличенный отступ для Top Bar */
-      box-sizing: border-box; /* Учитываем padding в ширине */
+      padding: 15px;
+      margin-top: 80px;
+      box-sizing: border-box;
     }
 
     .exchange-widget {
       width: 70%;
       background: rgba(255, 255, 255, 0.3);
-      border-radius: 25px; /* Увеличенный радиус */
-      padding: 15px; /* Увеличенный padding */
-      box-sizing: border-box; /* Учитываем padding в ширине */
-      font-size: 18px; /* Увеличенный размер текста */
+      border-radius: 25px;
+      padding: 15px;
+      box-sizing: border-box;
+      font-size: 18px;
     }
 
     .rewards-widget {
       width: 25%;
       background: rgba(255, 255, 255, 0.3);
-      border-radius: 25px; /* Увеличенный радиус */
-      padding: 15px; /* Увеличенный padding */
+      border-radius: 25px;
+      padding: 15px;
       text-align: center;
-      box-sizing: border-box; /* Учитываем padding в ширине */
-      font-size: 18px; /* Увеличенный размер текста */
+      box-sizing: border-box;
+      font-size: 18px;
     }
 
     /* Питомец */
     .pet {
-      width: 180px; /* Увеличенный размер */
-      height: 180px; /* Увеличенный размер */
+      width: 180px;
+      height: 180px;
       background: rgba(255, 255, 255, 0.3);
-      border-radius: 25px; /* Увеличенный радиус */
-      margin-top: 30px; /* Увеличенный отступ */
+      border-radius: 25px;
+      margin-top: 30px;
       animation: float 3s ease-in-out infinite;
     }
 
@@ -103,24 +103,27 @@
       display: flex;
       justify-content: space-around;
       width: 100%;
-      padding: 15px; /* Увеличенный padding */
+      padding: 15px;
       background: rgba(255, 255, 255, 0.2);
       position: fixed;
       bottom: 0;
       left: 0;
       right: 0;
       z-index: 1000;
-      box-sizing: border-box; /* Учитываем padding в ширине */
+      box-sizing: border-box;
     }
 
     .button {
-      background: rgba(255, 255, 255, 0.3);
+      background: none;
       border: none;
-      border-radius: 25px; /* Увеличенный радиус */
-      padding: 15px 30px; /* Увеличенный padding */
-      color: white;
-      font-size: 18px; /* Увеличенный размер текста */
+      padding: 0;
+      cursor: pointer;
       transition: transform 0.2s;
+    }
+
+    .button img {
+      width: 40px; /* Размер иконок */
+      height: 40px;
     }
 
     .button:hover {
@@ -133,9 +136,9 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start; /* Виджеты вверху */
+      justify-content: flex-start;
       width: 100%;
-      padding-bottom: 100px; /* Увеличенный отступ для Bottom Bar */
+      padding-bottom: 100px;
     }
   </style>
 </head>
@@ -163,10 +166,10 @@
 
   <!-- Bottom Bar -->
   <div class="bottom-bar">
-    <button class="button">🏠</button>
-    <button class="button">📜</button>
-    <button class="button">🏆</button>
-    <button class="button">👫</button>
+    <button class="button"><img src="assets/menu.png" alt="Menu"></button>
+    <button class="button"><img src="assets/missions.png" alt="Missions"></button>
+    <button class="button"><img src="assets/top.png" alt="Top"></button>
+    <button class="button"><img src="assets/friends.png" alt="Friends"></button>
   </div>
 </body>
 </html>
