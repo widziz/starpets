@@ -10,7 +10,7 @@
   <style>
     /* Основные стили */
     body {
-      background: #FFF0F5; /* Нежно-розовый фон */
+      background: #F5F5DC; /* Бежевый фон (цвет пергамента) */
       font-family: 'Nunito', sans-serif;
       color: #4A4A4A; /* Темно-серый текст */
       margin: 0;
@@ -20,13 +20,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      animation: gradient 10s ease infinite;
-    }
-
-    @keyframes gradient {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
     }
 
     /* Top Bar */
@@ -35,7 +28,7 @@
       justify-content: space-between;
       width: 100%;
       padding: 15px;
-      background: #FFB6C1; /* Розовый фон */
+      background: #D2B48C; /* Цвет загара (уютный коричневый) */
       position: fixed;
       top: 0;
       left: 0;
@@ -68,7 +61,7 @@
 
     .exchange-widget {
       width: 70%;
-      background: #FFDAB9; /* Персиковый фон */
+      background: #DEB887; /* Цвет бисквита */
       border-radius: 25px;
       padding: 15px;
       box-sizing: border-box;
@@ -77,19 +70,20 @@
 
     .rewards-widget {
       width: 25%;
-      background: #87CEEB; /* Голубой фон */
+      background: #CD853F; /* Цвет перу */
       border-radius: 25px;
       padding: 15px;
       text-align: center;
       box-sizing: border-box;
       font-size: 18px;
+      color: white; /* Белый текст для контраста */
     }
 
     /* Питомец */
     .pet {
       width: 180px;
       height: 180px;
-      background: #FFE4E1; /* Светло-розовый фон */
+      background: #FFF8DC; /* Цвет слоновой кости */
       border-radius: 25px;
       margin-top: 30px;
       animation: float 3s ease-in-out infinite;
@@ -97,7 +91,7 @@
 
     @keyframes float {
       0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
+      50% { transform: translateY(-10px); } /* Легкая анимация дыхания */
     }
 
     /* Bottom Bar */
@@ -106,7 +100,7 @@
       justify-content: space-around;
       width: 100%;
       padding: 15px;
-      background: #FFB6C1; /* Розовый фон */
+      background: #D2B48C; /* Цвет загара */
       position: fixed;
       bottom: 0;
       left: 0;
@@ -204,6 +198,10 @@
   <script>
     // Инициализация Telegram Web App
     Telegram.WebApp.ready();
+
+    // Запрет растягивания веб-приложения
+    Telegram.WebApp.disableVerticalSwipes(); // Отключаем вертикальные свайпы
+    Telegram.WebApp.enableClosingConfirmation(); // Включаем подтверждение закрытия
 
     // Логируем параметры для отладки
     console.log('Viewport Height:', Telegram.WebApp.viewportHeight);
