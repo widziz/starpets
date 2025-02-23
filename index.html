@@ -10,7 +10,7 @@
   <style>
     /* Основные стили */
     body {
-      background: linear-gradient(to bottom, #ffe2e3, #e5ffb9); /* Градиентный фон */
+      background: linear-gradient(45deg, #fff5e0, #ffe9cc); /* Градиентный фон по диагонали */
       background-size: cover; /* Масштабирование фона */
       font-family: 'Nunito', sans-serif;
       color: #4A4A4A; /* Темно-серый текст */
@@ -37,16 +37,15 @@
     .top-bar {
       display: flex;
       justify-content: space-between;
-      width: 100%;
+      width: calc(100% + 30px); /* Продлить бары за рамки */
       padding: 15px;
-      background: rgba(210, 180, 140, 0.8); /* Цвет загара с прозрачностью */
+      background: rgba(255, 233, 204, 0.2); /* Цвет ffe9cc с прозрачностью */
       position: fixed;
-      top: 0;
+      top: -15px; /* Продлить бары за рамки */
       left: 50%;
       transform: translateX(-50%);
       z-index: 1000;
       box-sizing: border-box;
-      max-width: 390px;
       border-radius: 15px; /* Закругленные углы */
     }
 
@@ -111,16 +110,15 @@
     .bottom-bar {
       display: flex;
       justify-content: space-around;
-      width: 100%;
+      width: calc(100% + 30px); /* Продлить бары за рамки */
       padding: 15px;
-      background: rgba(210, 180, 140, 0.8); /* Цвет загара с прозрачностью */
+      background: rgba(255, 233, 204, 0.2); /* Цвет ffe9cc с прозрачностью */
       position: fixed;
-      bottom: 0;
+      bottom: -15px; /* Продлить бары за рамки */
       left: 50%;
       transform: translateX(-50%);
       z-index: 1000;
       box-sizing: border-box;
-      max-width: 390px;
       border-radius: 15px; /* Закругленные углы */
     }
 
@@ -130,18 +128,18 @@
       border: none;
       padding: 0;
       cursor: pointer;
-      width: 120px;  /* Уменьшенные размеры кнопок */
-      height: 120px; /* Уменьшенные размеры кнопок */
+      width: 140px;  /* Немного увеличенные размеры кнопок */
+      height: 140px; /* Немного увеличенные размеры кнопок */
       display: flex;
       align-items: center;
       justify-content: center;
       transition: transform 0.1s ease;
-      margin-bottom: -60px; /* Опустить кнопки на 60 пикселей вниз */
+      margin-bottom: -50px; /* Опустить кнопки на 50 пикселей вниз */
     }
 
     .button img {
-      width: 80px;  /* Уменьшенные размеры иконок */
-      height: 80px; /* Уменьшенные размеры иконок */
+      width: 100px;  /* Немного увеличенные размеры иконок */
+      height: 100px; /* Немного увеличенные размеры иконок */
       transition: transform 0.1s ease;
     }
 
@@ -171,7 +169,7 @@
       align-items: center;
       justify-content: flex-start;
       width: 100%;
-      padding-bottom: 120px; /* Увеличенное пространство для кнопок снизу */
+      padding-bottom: 150px; /* Увеличенное пространство для кнопок снизу */
       max-width: 390px;
     }
   </style>
