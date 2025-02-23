@@ -10,7 +10,7 @@
   <style>
     /* Основные стили */
     body {
-      background: url('assets/bg.png') no-repeat center center fixed; /* Фон с изображением */
+      background: linear-gradient(to bottom, #F5F5DC, #FFE4B5); /* Нежный градиентный фон */
       background-size: cover; /* Масштабирование фона */
       font-family: 'Nunito', sans-serif;
       color: #4A4A4A; /* Темно-серый текст */
@@ -19,8 +19,18 @@
       height: 100vh;
       overflow: hidden;
       display: flex;
+      justify-content: center; /* Центрирование контейнера */
+      align-items: center; /* Центрирование контейнера */
+    }
+
+    .container {
+      width: 100%;
+      max-width: 390px; /* Ограничение ширины контейнера */
+      margin: 0 auto;
+      display: flex;
       flex-direction: column;
       align-items: center;
+      position: relative; /* Относительное позиционирование для центрирования */
     }
 
     /* Top Bar */
@@ -32,10 +42,11 @@
       background: rgba(210, 180, 140, 0.8); /* Цвет загара с прозрачностью */
       position: fixed;
       top: 0;
-      left: 0;
-      right: 0;
+      left: 50%;
+      transform: translateX(-50%);
       z-index: 1000;
       box-sizing: border-box;
+      max-width: 390px;
     }
 
     .profile {
@@ -101,13 +112,14 @@
       justify-content: space-around;
       width: 100%;
       padding: 15px;
-      background: rgba(210, 180, 140, 0.8); /* Цвет загара с прозрачностью */
+      background: rgba(210, 180, 140, 0); /* Цвет загара с прозрачностью */
       position: fixed;
       bottom: 0;
-      left: 0;
-      right: 0;
+      left: 50%;
+      transform: translateX(-50%);
       z-index: 1000;
       box-sizing: border-box;
+      max-width: 390px;
     }
 
     .button {
@@ -116,24 +128,19 @@
       border: none;
       padding: 0;
       cursor: pointer;
-      width: 60px;
-      height: 60px;
+      width: 120px;  /* Уменьшенные размеры кнопок */
+      height: 120px; /* Уменьшенные размеры кнопок */
       display: flex;
       align-items: center;
       justify-content: center;
       transition: transform 0.1s ease;
+      margin-bottom: -40px; /* Опустить кнопки на 60 пикселей вниз */
     }
 
     .button img {
-      width: 40px;
-      height: 40px;
+      width: 80px;  /* Уменьшенные размеры иконок */
+      height: 80px; /* Уменьшенные размеры иконок */
       transition: transform 0.1s ease;
-    }
-
-    /* Увеличиваем иконку "домика" */
-    .button.menu img {
-      width: 50px;
-      height: 50px;
     }
 
     /* Анимация при наведении */
@@ -162,38 +169,41 @@
       align-items: center;
       justify-content: flex-start;
       width: 100%;
-      padding-bottom: 100px;
+      padding-bottom: 120px; /* Увеличенное пространство для кнопок снизу */
+      max-width: 390px;
     }
   </style>
 </head>
 <body>
-  <!-- Top Bar -->
-  <div class="top-bar">
-    <div class="profile">
-      <img src="profile.png" alt="Profile">
-      <div>🌟 2,500</div>
-    </div>
-    <div>⚙️</div>
-  </div>
-
-  <!-- Основной контент -->
-  <div class="content">
-    <!-- Виджеты -->
-    <div class="widgets">
-      <div class="exchange-widget">Обмен: 1 монета = 10 очков</div>
-      <div class="rewards-widget">🎁</div>
+  <div class="container">
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="profile">
+        <img src="profile.png" alt="Profile">
+        <div>🌟 2,500</div>
+      </div>
+      <div>⚙️</div>
     </div>
 
-    <!-- Питомец -->
-    <div class="pet"></div>
-  </div>
+    <!-- Основной контент -->
+    <div class="content">
+      <!-- Виджеты -->
+      <div class="widgets">
+        <div class="exchange-widget">Обмен: 1 монета = 10 очков</div>
+        <div class="rewards-widget">🎁</div>
+      </div>
 
-  <!-- Bottom Bar -->
-  <div class="bottom-bar">
-    <button class="button menu"><img src="assets/menu.png" alt="Menu"></button>
-    <button class="button"><img src="assets/missions.png" alt="Missions"></button>
-    <button class="button"><img src="assets/top.png" alt="Top"></button>
-    <button class="button"><img src="assets/friends.png" alt="Friends"></button>
+      <!-- Питомец -->
+      <div class="pet"></div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="bottom-bar">
+      <button class="button menu"><img src="assets/menu.png" alt="Menu"></button>
+      <button class="button"><img src="assets/missions.png" alt="Missions"></button>
+      <button class="button"><img src="assets/top.png" alt="Top"></button>
+      <button class="button"><img src="assets/friends.png" alt="Friends"></button>
+    </div>
   </div>
 
   <script>
